@@ -26,6 +26,7 @@ class CardCreate(CreateView):
 class CardUpdate(UpdateView):
   model = Cards
   fields = '__all__'
+  success_url = '/cards/'
 
 class CardDelete(DeleteView):
   model = Cards

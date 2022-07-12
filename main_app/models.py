@@ -15,5 +15,5 @@ class Cards(models.Model):
     # user = models.ForeignKey(User, on_delete=models.CASCADE)
     def __str__(self):
         return self.name
-    def get_absolute_url(self):
-        return reverse('cards_detail', kwargs={'pk': self.id})
+    def detail(self):
+        return reverse('cards_detail', kwargs={'card_id': self.id})
