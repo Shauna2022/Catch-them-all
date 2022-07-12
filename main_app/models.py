@@ -17,3 +17,7 @@ class Cards(models.Model):
         return self.name
     def detail(self):
         return reverse('cards_detail', kwargs={'card_id': self.id})
+
+class Selling(models.Model):
+  date = models.DateField()
+  price = models.IntegerField()
