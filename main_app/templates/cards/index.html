@@ -1,0 +1,20 @@
+{% extends 'base.html' %} {% block content %}
+
+<h1>Card Collection</h1>
+
+{% for card in cards %}
+<div class="card">
+    <a href="{% url 'detail' card.id %}">
+        <div class="card-content">
+            <span class="card-title">{{ card.name }}</span>
+            <p>Type: {{ card.type }}</p>
+            <p>Hp: {{ card.hp }}</p>
+            <p>Move 1: {{ card.move_name_1 }}</p>
+            <p>Move 2: {{ card.move_name_2 }}</p>
+            <p>Weakness: {{ card.weakness_type }}</p>
+            <p>Card Type: {{ card.card_type }}</p>
+
+        </div>
+    </a>
+</div>
+{% endfor %} {% endblock %}
