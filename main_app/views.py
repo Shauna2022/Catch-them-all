@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from main_app.models import Cards
 from .forms import SellingForm
@@ -21,6 +21,16 @@ def cards_detail(request, card_id):
   return render(request, 'cards/detail.html', {
     'cards': cards, 'selling_form': selling_form
   })
+def add_selling(request, card_id):
+   pass
+
+def add_selling(request, card_id):
+  form = SellingForm(request.POST)
+  if form.is_valid():
+    new_selling = form.save(commit=False)
+    new_selling.card_id = card_id
+    new_selling.save()
+  return redirect('detail', card_id=card_id)
 
 class CardCreate(CreateView):
   model = Cards
