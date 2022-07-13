@@ -2,13 +2,26 @@ body {
   display: flex;
   min-height: 100vh;
   flex-direction: column;
+  font-family: 'Press Start 2P', cursive;
 }
 
 main {
   flex: 1 0 auto;
 }
-
+nav {
+  background-color: orange;
+}
 footer {
   padding-top: 0;
   text-align: right;
+}
+.page-footer {
+  background-color: orange;
+}
+h1 {
+  text-align: center;
+}
+
+p {
+  text-align: center;
 }
