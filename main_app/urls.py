@@ -11,4 +11,5 @@ path('cards/create/', views.CardCreate.as_view(), name='cards_create'),
 path('cards/<int:pk>/update/', views.CardUpdate.as_view(), name='cards_update'),
 path('cards/<int:pk>/delete/', views.CardDelete.as_view(), name='cards_delete'),
 path('cards/<int:card_id>/add_selling/', views.add_selling, name='add_selling'),
+path('accounts/signup/', views.signup, name='signup'),
 ]
