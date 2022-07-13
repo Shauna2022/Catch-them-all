@@ -21,8 +21,6 @@ def cards_detail(request, card_id):
   return render(request, 'cards/detail.html', {
     'cards': cards, 'selling_form': selling_form
   })
-def add_selling(request, card_id):
-   pass
 
 def add_selling(request, card_id):
   form = SellingForm(request.POST)

@@ -20,7 +20,7 @@
 
 
 <div class="col s6">
-    <form action="{% url 'add_selling' card.id %}" method="post">
+    <form action="{% url 'add_selling' cards.id %}" method="post">
         {% csrf_token %} {{ selling_form.as_p }}
         <input type="submit" class="btn" value="Add Price Point" />
     </form>
@@ -35,7 +35,7 @@
             {% for selling in card.selling_set.all %}
             <tr>
                 <td>{{selling.date}}</td>
-                <td>{{selling.get_meal_display}}</td>
+                <td>{{selling.get_price_display}}</td>
             </tr>
             {% endfor %}
         </tbody>
@@ -50,7 +50,7 @@
         setDefaultDate: true,
         autoClose: true
     });
-    var selectEl = document.getElementById('id_meal');
+    var selectEl = document.getElementById('id_price');
     M.FormSelect.init(selectEl);
 </script>
 {% endblock %}

@@ -23,14 +23,13 @@ class Cards(models.Model):
         return reverse('cards_detail', kwargs={'card_id': self.id})
 
 class Selling(models.Model):
-  date = models.DateField('Date')
-  price = models.IntegerField(
-    max_length=1,
-    choices=PRICE,
-    default=PRICE[0][0]
+    date = models.DateField('Date')
+    price = models.IntegerField(
+        choices=PRICE,
+        default=PRICE[0][0]
     )
-card = models.ForeignKey(Cards, on_delete=models.CASCADE)
-def __str__(self):
+    card = models.ForeignKey(Cards, on_delete=models.CASCADE)
+    def __str__(self):
         return f"{self.get_price_display()} on {self.date}"
-class Meta:
-    ordering = ['-date']
+    class Meta:
+        ordering = ['-date']
