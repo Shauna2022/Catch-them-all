@@ -10,7 +10,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>TCG Binder</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="http://fonts.cdnfonts.com/css/pokemon-solid" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}" />
@@ -18,23 +18,24 @@
 </head>
 
 <body>
+
     <header class="navbar-fixed">
         <nav>
             <div class="nav-wrapper">
-                <ul>
+                <ul class="nav-color">
                     <li>
-                        <a href="/" class="left brand-logo"> Caught This Pokemon</a>
+                        <a href="/" class="left brand-logo" style="color:#039be5"> Caught This Pokemon</a>
                     </li>
                 </ul>
-                <ul class="right">
-                    <li><a href="{% url 'about' %}">About</a></li>
+                <ul class="right" style="color:#039be5">
+                    <li><a href="{% url 'about' %}" style="color:#039be5">About</a></li>
                     {% if user.is_authenticated %}
-                    <li><a href="{% url 'cards_create' %}">Caught Another One?</a></li>
-                    <li><a href="{% url 'index' %}">View My Cards</a></li>
-                    <li><a href="{% url 'logout' %}">Log Out</a></li>
+                    <li><a href="{% url 'cards_create' %}" style="color:#039be5">Caught Another One?</a></li>
+                    <li><a href="{% url 'index' %}" style="color:#039be5">View My Cards</a></li>
+                    <li><a href="{% url 'logout' %}" style="color:#039be5">Log Out</a></li>
                     {% else %}
-                    <li><a href="{% url 'signup' %}">Sign Up</a></li>
-                    <li><a href="{% url 'login' %}">Log In</a></li>
+                    <li><a href="{% url 'signup' %}" style="color:#039be5">Sign Up</a></li>
+                    <li><a href="{% url 'login' %}" style="color:#039be5">Log In</a></li>
                     {% endif %}
                 </ul>
             </div>

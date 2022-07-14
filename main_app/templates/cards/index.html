@@ -3,6 +3,7 @@
 <h1>Card Collection</h1>
 
 {% for card in cards %}
+
 <div class="card">
     <a href="{% url 'detail' card.id %}">
         <div class="card-content">
@@ -17,4 +18,6 @@
         </div>
     </a>
 </div>
+
+
 {% endfor %} {% endblock %}

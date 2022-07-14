@@ -5,10 +5,13 @@
     Are you sure you want to delete
     <span class="orange-text">{{ card.name }}</span>?
 </h4>
-
+<br />
+<br />
 <form action="" method="POST">
     {% csrf_token %}
     <input type="submit" value="Yes - Delete!" class="btn" />
+    <br />
+    <br />
     <a href="{% url 'detail' object.id %}">Cancel</a>
 </form>
 {% endblock %}

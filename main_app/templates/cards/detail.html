@@ -12,37 +12,37 @@
         <p>Weakness: {{ cards.weakness_type }}</p>
         <p>Card Type: {{ cards.card_type }}</p>
         <div class="card-action">
-            <a href="{% url 'cards_update' cards.id %}">Edit</a>
-            <a href="{% url 'cards_delete' cards.id %}">Delete</a>
+            <a href="{% url 'cards_update' cards.id %}" class="edit">Edit</a>
+            <a href="{% url 'cards_delete' cards.id %}" classs="delete">Delete</a>
         </div>
     </div>
 </div>
 
 
 <div class="col s6">
-    <form action="{% url 'add_selling' cards.id %}" method="POST">
-        {% csrf_token %} {{ selling_form.as_p }}
-        <input type="submit" class="btn" value="Add Price Point" />
+    <!-- <form action="{% url 'add_selling' cards.id %}" method="POST">
+        {% csrf_token %} {{ selling_form.as_p }} -->
+    <!-- <input type="submit" class="btn" value="Add Price Point" /> -->
     </form>
     <table class="striped">
         <thead>
-            <tr>
+            <!-- <tr>
                 <th>Date</th>
                 <th>Price Range</th>
-            </tr>
+            </tr> -->
         </thead>
         <tbody>
             {% for selling in card.selling_set.all %}
             <tr>
-                <td>{{selling.date}}</td>
-                <td>{{selling.get_price_display}}</td>
+                <!-- <td>{{selling.date}}</td>
+                <td>{{selling.get_price_display}}</td> -->
             </tr>
             {% endfor %}
         </tbody>
     </table>
 </div>
 </div>
-<script>
+<!-- <script>
     var dateEl = document.getElementById('id_date');
     M.Datepicker.init(dateEl, {
         format: 'yyyy-mm-dd',
@@ -52,5 +52,5 @@
     });
     var selectEl = document.getElementById('id_price');
     M.FormSelect.init(selectEl);
-</script>
+</script> -->
 {% endblock %}
