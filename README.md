@@ -1,6 +1,6 @@
 # Catch them all
 
-This is a wellness resource to make sure that we are taking care of our mental health while we are taking this intense course.
+This is an online Pokemon card binder to track pokemon cards.
 
 ### Technologies Used
 
